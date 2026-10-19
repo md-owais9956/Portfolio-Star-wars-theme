@@ -1,0 +1,93 @@
+/* ===== Cinematic layer: canvas, intro, readability, HUD ===== */
+html{background:#030303}
+body{background:#030303}
+body:before{display:none}
+#stage{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;display:block;z-index:0;background:#020203}
+.stage-veil{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.4s ease;
+  background:
+   linear-gradient(90deg,rgba(3,3,4,.92) 0%,rgba(3,3,4,.78) 34%,rgba(3,3,4,.28) 62%,rgba(3,3,4,.05) 100%),
+   linear-gradient(0deg,rgba(3,3,4,.6) 0%,transparent 28%,transparent 80%,rgba(3,3,4,.5) 100%)}
+body.awake .stage-veil{opacity:1}
+
+/* Intro: transparent overlay – only the helmet (canvas) and ONE button are visible */
+.intro-screen{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-end;justify-content:center;background:transparent;padding:0 20px clamp(34px,8vh,84px);transition:opacity 1.1s ease,visibility 1.1s ease}
+.intro-screen.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+.intro-screen .initiate-btn{opacity:0;transition:opacity .9s ease .2s,transform .2s,background .2s,box-shadow .2s;max-width:94vw}
+.intro-screen .initiate-btn.ready{opacity:1}
+.intro-screen.igniting .initiate-btn{opacity:0!important;transform:translateY(12px);pointer-events:none}
+.initiate-btn:focus-visible,.sound-toggle:focus-visible{outline:2px solid #ff6a6a;outline-offset:4px}
+body.booting{overflow:hidden}
+body.booting .site-shell,body.booting main{visibility:hidden}
+
+/* Content sits in a left column so the battle stays visible to its right (desktop) */
+main,footer,.ticker,header{position:relative;z-index:2}
+header{background:rgba(5,5,6,.72)}
+section{border-bottom:1px solid #ffffff0d}
+main section>.wrap,main section>.clearance-gate{width:min(1120px,calc(100% - 40px))}
+@media(min-width:1001px){
+  main .wrap,main .clearance-gate,.ticker{margin-left:max(24px,calc((100vw - 1180px)/2));margin-right:0;width:min(640px,54vw)}
+  .ticker{width:min(640px,54vw);border-inline:0}
+  .hero{grid-template-columns:1fr}
+  .projects,.about-grid{grid-template-columns:1fr 1fr}
+  .game-wrap,.humor,.contact{grid-template-columns:1fr}
+  .philosophy-grid{grid-template-columns:1fr}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .nav{width:min(1120px,calc(100% - 40px))!important;margin-left:max(20px,calc((100vw - 1120px)/2))!important}
+  .footer-inner{width:min(900px,70vw)!important}
+}
+.panel,.project,.thought,.humor-box,.game-intro,.console,.thought-console,.skill{backdrop-filter:blur(7px);background-color:rgba(10,8,8,.84)}
+.hero{min-height:calc(100vh - 72px)}
+.hero h1,.section-head h2{text-shadow:0 2px 24px #000}
+p,.intro,.section-head p{text-shadow:0 1px 12px #000}
+
+/* HUD */
+.sound-toggle{bottom:72px;z-index:60}
+.battle-caption{position:fixed;right:20px;bottom:128px;text-align:right;z-index:50;color:#d9b0b0;font-size:10px;background:rgba(5,5,6,.6);padding:7px 10px;border-left:2px solid #f04444;pointer-events:none;max-width:calc(100vw - 120px)}
+.battle-caption:empty{display:none}
+.scene-progress{position:fixed;left:0;top:0;right:0;height:2px;z-index:70;background:transparent;pointer-events:none}
+.scene-progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#8a1010,#ff4a3a);transform-origin:left;transform:scaleX(0);box-shadow:0 0 10px #f33}
+@media(max-width:1000px){
+  .stage-veil{background:linear-gradient(0deg,rgba(3,3,4,.8),rgba(3,3,4,.5) 45%,rgba(3,3,4,.7))}
+  .sound-toggle{bottom:66px;right:10px}
+  .battle-caption{left:10px;right:auto;text-align:left;bottom:10px;font-size:9px}
+}
+/* No-WebGL / reduced capability fallback: keep the dark premium page, no battle */
+body.no3d{background:radial-gradient(ellipse at 75% 15%,#4a0b10 0,#050505 55%)}
+body.no3d .stage-veil,body.no3d .battle-caption,body.no3d .scene-progress{display:none}
+body.no3d .intro-screen{background:#030303}
+body.no3d .intro-screen .initiate-btn{opacity:1}
+@media(prefers-reduced-motion:reduce){.intro-screen,.stage-veil{transition:none}}
+
+/* Welcome button (restored from the original design) */
+.initiate-btn{cursor:pointer;border:1px solid #ff4a4a;background:rgba(10,5,5,.9);color:#fff;padding:19px 25px;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 32px #f00a}
+.initiate-btn:hover{transform:translateY(-3px);background:#7e1010;box-shadow:0 0 44px #f33a}
+@media(max-width:700px){.initiate-btn{padding:16px 18px;font-size:10px}}
+
+/* Welcome button (restored from the original design) */
+.initiate-btn{cursor:pointer;border:1px solid #ff4a4a;background:rgba(10,5,5,.9);color:#fff;padding:19px 25px;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 32px #f00a}
+.initiate-btn:hover{transform:translateY(-3px);background:#7e1010;box-shadow:0 0 44px #f33a}
+@media(max-width:700px){.initiate-btn{padding:16px 18px;font-size:10px}}
+
+/* Tools of the trade: categorized skill cards */
+#skills .section-head{flex-direction:row;align-items:flex-end}
+#skills .section-head p{max-width:360px}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skill-card{min-width:0;padding:22px 20px 20px;border:1px solid #302727;background:rgba(10,8,8,.88);backdrop-filter:blur(7px)}
+.skill-kicker{margin-bottom:10px;color:#ff4147;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.skill-card h3{margin:0 0 17px;color:#eee7e7;font-size:17px;letter-spacing:-.035em}
+.skill-list{display:flex;flex-wrap:wrap;gap:7px}
+#skills .skill{padding:10px 11px;border:1px solid #302727;background:#0c0a0a;color:#ddd;font:10px var(--mono);line-height:1.25;transition:border-color .2s,color .2s,transform .2s}
+#skills .skill:hover{border-color:#ff4147;color:#ff6565;transform:translateY(-2px)}
+.skill-card-wide{grid-column:1/-1}
+.dsajourney{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.9fr);gap:26px;margin-top:20px;padding:34px;border:1px solid #542222;background:linear-gradient(120deg,rgba(35,10,12,.72),rgba(10,8,8,.94) 62%)}
+.dsajourney h3{margin:0 0 14px;font-size:clamp(27px,3.2vw,38px);line-height:1.1;letter-spacing:-.055em}
+.dsajourney-copy p{max-width:650px;color:#a99f9f;font-size:14px;line-height:1.8}
+.dsajourney-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.dsajourney-links a{padding:10px 13px;border:1px solid #542222;color:#eee;text-decoration:none;font:11px var(--mono)}
+.dsajourney-links a:hover{background:#571414;border-color:#ff4147}
+.dsajourney-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
+.dsajourney-stats div{min-height:90px;padding:16px;border:1px solid #302727;background:rgba(12,10,10,.8)}
+.dsajourney-stats strong,.dsajourney-stats span{display:block}
+.dsajourney-stats strong{font:500 13px var(--mono);color:#eee}
+.dsajourney-stats span{margin-top:8px;color:#a99f9f;font-size:11px;line-height:1.5}
+@media(max-width:700px){#skills .section-head{flex-direction:column;align-items:flex-start}.skills-grid{grid-template-columns:1fr}.skill-card-wide{grid-column:auto}.dsajourney{grid-template-columns:1fr;padding:23px 18px}.dsajourney-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -1,0 +1,26 @@
+{
+  "version": "12.0.0",
+  "notes": "Asset manifest. Everything listed under 'rig' is bundled and verified to load. 'audio.optionalFiles' are NOT bundled (copyrighted film audio); drop licensed files at those paths and they override the synthesized versions automatically.",
+  "rig": {
+    "url": "assets/models/Soldier.glb",
+    "source": "three.js examples (examples/models/gltf/Soldier.glb), Mixamo 'Vanguard' character + Idle/Walk/Run clips",
+    "license": "Mixamo content: free for personal & commercial use inside projects; do not redistribute the raw file as a standalone asset. Replace with your own licensed model for production.",
+    "clips": ["Idle", "Walk", "Run", "TPose"],
+    "usedFor": ["vader", "obiwan", "plagueis", "palpatine"],
+    "bones": "mixamorig:* (Hips, Spine..Spine2, Head, RightArm, RightForeArm, RightHand, legs)",
+    "note": "STAND-IN: one rig is reused for all four characters. Faces/costumes are procedural 3D props parented to the real bones. Combat motion (slashes, parries, blocks, dodges, defeats) is authored in code on top of the skeleton (2-bone IK + bone offsets). No licensed Star Wars character models are bundled."
+  },
+  "procedural": {
+    "vaderHelmet": "src/helmet.js — original low-poly 3D helmet built in code (no licensed model). Replace with a licensed GLB by loading it in src/actors.js (buildHelmet())",
+    "sabers": "src/actors.js — hilt + 4-layer emissive blade, parented to the RightHand bone, with a PointLight",
+    "environment": "src/world.js — reactor chamber, shaft, columns, fog, light shafts, dust, sparks, Force lightning"
+  },
+  "audio": {
+    "engine": "Web Audio API (src/audio.js) — all sounds synthesized at runtime, original, not film recordings",
+    "optionalFiles": {
+      "ignite": "assets/audio/lightsaber-ignite.mp3",
+      "music": "assets/audio/imperial-march.mp3"
+    },
+    "synthesized": ["saber ignition (2.5s)", "saber hum", "swing", "clash", "Force push", "Force lightning", "defeat", "reactor-shaft fall + boom", "original dark orchestral-style ambient score (not the Imperial March)"]
+  }
+}

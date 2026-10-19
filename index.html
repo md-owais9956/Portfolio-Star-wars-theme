@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Mohd. Owais — developer, cosmic mind, and curious builder.">
+<title>Mohd. Owais | The Dark Side of Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="booting">
+
+<!-- Single fixed WebGL canvas: intro helmet + the whole battle world live here. -->
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="stage-veil" id="stageVeil" aria-hidden="true"></div>
+
+<!-- Intro overlay: the ONLY DOM visible on first load is this button. -->
+<div class="intro-screen" id="introScreen">
+  <button class="initiate-btn" id="initiateBtn" type="button" disabled>WELCOME TO THE DARK SIDE — CLICK TO EXPLORE</button>
+  <noscript><p class="mono" style="color:#fff">This experience needs JavaScript.</p></noscript>
+</div>
+
+<div class="site-shell" id="siteShell">
+<button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true" aria-label="Mute or unmute sound"><span class="sound-dot"></span><span id="soundLabel">SOUND: ON</span></button>
+<div class="battle-caption mono" id="battleCaption" aria-live="polite"></div>
+<div class="scene-progress" aria-hidden="true"><i id="sceneProgress"></i></div>
+<header><div class="wrap nav"><a class="brand" href="#home">OWAIS<span>.</span>SYS</a><nav><a href="#mind">The mind</a><a href="#work">Projects</a><a href="#philosophy">Philosophy</a><a href="#dark-thoughts">Dark thoughts</a><a href="#game">Mini-game</a><a class="nav-cta" href="#contact">Make contact ↗</a></nav></div></header>
+<main>
+<section class="wrap hero" id="home">
+ <div class="hero-copy"><div class="eyebrow mono"><i class="pulse"></i> SYSTEM ONLINE / SEEKING BETTER QUESTIONS</div>
+ <h1>I find your bugs<br><em>disturbing.</em></h1>
+ <p class="intro">I'm <strong>Mohd. Owais</strong> — a developer, a <strong>cosmic mind</strong>, and a curious human trying to make computers do interesting things. I build software, question reality, and occasionally argue with a semicolon.</p>
+ <div class="actions"><a class="btn primary" href="#work">Explore my systems <span>↘</span></a><button class="btn secondary" id="forceBtn">Feel the Force <span>✦</span></button></div>
+ <div class="tiny-note">// WARNING: MAY OVERTHINK SIMPLE PROBLEMS AT 2 AM</div></div>
+</section>
+<div class="ticker"><div class="ticker-track">BUILD THINGS THAT MATTER <span>✦</span> STAY CURIOUS <span>✦</span> QUESTION THE DEFAULTS <span>✦</span> DEBUG WITH FEELING <span>✦</span> BUILD THINGS THAT MATTER <span>✦</span> STAY CURIOUS <span>✦</span> QUESTION THE DEFAULTS <span>✦</span> DEBUG WITH FEELING <span>✦</span></div></div>
+<section id="mind"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / The person behind the terminal</div><h2>Not just a stack.<br><span class="red">A whole universe.</span></h2></div><p>Part engineer, part philosopher, part professional tab-opener. Always learning, always building.</p></div>
+<div class="about-grid"><article class="panel"><div class="mono">THE BUILDER</div><h3>Curiosity, compiled.</h3><p>I'm a B.Tech CSE student exploring software engineering, DSA, web development, and AI. I like understanding how things work beneath the surface—not just making them work once.</p></article><article class="panel"><div class="mono">THE COSMIC MIND</div><h3>Small human. Huge questions.</h3><p>Code teaches precision. Philosophy teaches humility. The universe reminds me that there's always more to learn—and probably a bug somewhere in the simulation.</p></article><article class="panel"><div class="mono">THE WORKING THEORY</div><p class="quote">“Build today. Improve tomorrow. <b>Stay curious forever.</b>”</p></article><article class="panel"><div class="mono">HONEST STATUS REPORT</div><h3>Currently leveling up.</h3><p>Sharpening problem-solving, shipping projects, and documenting the process at TechWithOwais. Not claiming to know everything. Just committed to learning more than yesterday.</p></article></div></div></section>
+<section id="work"><div class="clearance-gate" data-clearance="work">
+  <div class="clearance-kicker">IMPERIAL ARCHIVES // ACCESS 01</div>
+  <h3>Unlock the project archives</h3>
+  <p>Mission task: confirm you are ready to inspect the systems, not just judge the landing page.</p>
+  <label class="clearance-check"><input type="checkbox" class="clearance-check-input"> <span>I accept the mission: explore the project files and learn how the systems work.</span></label>
+  <button class="clearance-unlock" type="button" disabled>✓ Complete clearance task</button>
+</div>
+<div class="clearance-content"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / Selected experiments</div><h2>Things I've <span class="red">brought online.</span></h2></div><p>Real projects, real learning. Open a repository to inspect the machinery.</p></div>
+<div class="projects">
+<article class="project"><div class="project-top"><span class="mono">AI / VOICE</span><span class="project-no">SYS_001</span></div><h3>JARVIS</h3><p>A Python voice-assistant experiment with voice authentication. Because typing is great, but talking to your computer feels delightfully futuristic.</p><div class="tags"><span class="tag">Python</span><span class="tag">Voice AI</span><span class="tag">Resemblyzer</span></div><a class="project-link" href="https://github.com/md-owais9956/J.A.R.V.I.S.-" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
+<article class="project"><div class="project-top"><span class="mono">DATA / PREDICTION</span><span class="project-no">SYS_002</span></div><h3>Groundwater Predictor</h3><p>A prediction-focused project exploring how data can help us reason about groundwater levels and environmental questions.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">Data</span><span class="tag">Prediction</span></div><a class="project-link" href="https://github.com/md-owais9956/groundWaterPredictor" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
+<article class="project"><div class="project-top"><span class="mono">WEB / HEALTH</span><span class="project-no">SYS_003</span></div><h3>CareConnect</h3><p>A healthcare-oriented project concept for connecting doctor and patient information through a digital experience.</p><div class="tags"><span class="tag">Web Development</span><span class="tag">Database</span></div><a class="project-link" href="https://github.com/md-owais9956/CareConnect" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
+<article class="project"><div class="project-top"><span class="mono">WRITING / LEARNING</span><span class="project-no">SYS_004</span></div><h3>TechWithOwais</h3><p>My learning journal: notes, experiments, and the occasional public record of me figuring things out one concept at a time.</p><div class="tags"><span class="tag">Astro</span><span class="tag">Writing</span><span class="tag">Learning in Public</span></div><a class="project-link" href="https://techwithowais.co.in" target="_blank" rel="noreferrer">Read the logs ↗</a></article>
+
+<article class="project"><div class="project-top"><span class="mono">SYSTEMS / IN-MEMORY DATABASE</span><span class="project-no">SYS_005</span></div><h3>Vaderis <span class="red">(Redis-inspired)</span></h3><p>A from-scratch Redis-inspired server experiment: sockets, command handling, and the fundamentals behind an in-memory data store. The Dark Side of caching starts here.</p><div class="tags"><span class="tag">C++ / Systems</span><span class="tag">TCP Sockets</span><span class="tag">Redis</span><span class="tag">RESP concepts</span></div><a class="project-link" href="https://github.com/md-owais9956" target="_blank" rel="noreferrer">Find Vaderis on GitHub ↗</a></article>
+</div></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / Current loadout</div><h2>Tools of the <span class="red">trade.</span></h2></div><p>My evolving toolkit across programming, web development, systems, databases, and AI. Learning in public, building through practice.</p></div>
+<div class="skills-grid">
+  <article class="skill-card"><div class="skill-kicker">01 / Languages</div><h3>Programming Languages</h3><div class="skill-list"><span class="skill">C++</span><span class="skill">Java</span><span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">PHP</span><span class="skill">SQL</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">02 / Frontend</div><h3>Frontend &amp; Mobile Development</h3><div class="skill-list"><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">React</span><span class="skill">Astro</span><span class="skill">Tailwind CSS</span><span class="skill">Responsive Design</span><span class="skill">Flutter — exploring</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">03 / Backend</div><h3>Backend Development &amp; APIs</h3><div class="skill-list"><span class="skill">Node.js</span><span class="skill">REST APIs</span><span class="skill">PHP</span><span class="skill">Python Backend</span><span class="skill">Voice Recognition</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">04 / Data</div><h3>Databases &amp; Data Management</h3><div class="skill-list"><span class="skill">MySQL</span><span class="skill">DBMS</span><span class="skill">SQL</span><span class="skill">Data Modeling</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">05 / AI Lab</div><h3>Machine Learning &amp; AI</h3><div class="skill-list"><span class="skill">Machine Learning — learning</span><span class="skill">Deep Learning — learning</span><span class="skill">LLM Development — exploring</span><span class="skill">Data Science — learning</span><span class="skill">NumPy</span><span class="skill">Pandas</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">06 / Systems</div><h3>DevOps, Cloud &amp; Developer Tools</h3><div class="skill-list"><span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Docker</span><span class="skill">Linux</span><span class="skill">Ubuntu</span><span class="skill">WSL</span><span class="skill">VS Code</span><span class="skill">Vercel</span><span class="skill">Netlify</span><span class="skill">Cloud Deployment</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">07 / Engineering</div><h3>Core Computer Science &amp; Software Engineering</h3><div class="skill-list"><span class="skill">Data Structures &amp; Algorithms</span><span class="skill">Problem Solving</span><span class="skill">Object-Oriented Programming</span><span class="skill">Agile Methodologies</span><span class="skill">System Design — learning</span><span class="skill">Open Source</span></div></article>
+  <article class="skill-card"><div class="skill-kicker">08 / Build Log</div><h3>Projects &amp; Learning in Public</h3><div class="skill-list"><span class="skill">TechWithOwais</span><span class="skill">JARVIS Voice Assistant</span><span class="skill">Groundwater Predictor</span><span class="skill">Vaderis — in progress</span><span class="skill">Project Documentation</span><span class="skill">Continuous Learning</span></div></article>
+  <article class="skill-card skill-card-wide"><div class="skill-kicker">09 / Credentials</div><h3>Professional Certifications</h3><div class="skill-list"><span class="skill">Oracle Certified Professional — Java SE 21 Developer</span><span class="skill">IBM DevOps</span></div></article>
+</div>
+<div class="dsajourney"><div class="dsajourney-copy"><div class="skill-kicker">The daily grind / DSA journey</div><h3>One problem at a time.<br><span class="red">One level stronger.</span></h3><p>I’m documenting my Data Structures &amp; Algorithms journey through LeetCode, coding challenges, solution breakdowns, and learning-in-public posts. The goal is not just to get accepted—it’s to understand the pattern, optimize the solution, and explain the trade-offs.</p><div class="dsajourney-links"><a href="https://leetcode.com/u/md_owais_/" target="_blank" rel="noreferrer">LeetCode profile ↗</a><a href="https://github.com/md-owais9956" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://techwithowais.co.in" target="_blank" rel="noreferrer">TechWithOwais ↗</a></div></div><div class="dsajourney-stats"><div><strong>LeetCode</strong><span>Problem-solving practice</span></div><div><strong>DSA</strong><span>Patterns, dry runs &amp; complexity</span></div><div><strong>Codeforces</strong><span>Competitive programming practice</span></div><div><strong>LinkedIn</strong><span>Sharing solutions &amp; progress</span></div></div></div>
+</div></section>
+<section id="game"><div class="clearance-gate" data-clearance="game">
+  <div class="clearance-kicker">SITH ACADEMY // TRIAL 02</div>
+  <h3>Unlock the training simulator</h3>
+  <p>A Sith does not skip the trial. Clear this checkpoint to enter the alignment game.</p>
+  <label class="clearance-check"><input type="checkbox" class="clearance-check-input"> <span>I will make a choice, own the result, and debug my own assumptions.</span></label>
+  <button class="clearance-unlock" type="button" disabled>✓ Complete clearance task</button>
+</div>
+<div class="clearance-content"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Interactive experiment</div><h2>Choose your <span class="red">alignment.</span></h2></div><p>A tiny personality quiz. No midichlorian test required. Your results are scientifically questionable.</p></div>
+<div class="game-wrap"><div class="game-intro"><div class="mono">SITH ACADEMY / TRIAL 01</div><h3>The Dark Side<br>of the <span class="red">Debugger.</span></h3><p>Three decisions stand between you and your destiny. Choose wisely—or choose the option that makes the funniest commit message.</p><button class="btn primary" id="startGame">Begin the trial ↗</button><p class="mono" style="margin-top:25px">NO DATA SAVED. JUST VIBES.</p></div>
+<div class="console" id="console"><div class="console-bar"><div class="dots"><i></i><i></i><i></i></div><span class="mono">alignment.exe</span><span class="mono">v1.0</span></div><div class="prompt" id="gameStep">AWAITING INITIATION...</div><div class="question" id="question">Ready to discover what kind of developer lurks within?</div><div class="choices" id="choices"><button class="choice" data-start="1">Initialize the simulation</button></div><div class="bar"><span id="progress"></span></div><div class="game-bottom"><div class="game-result" id="result">SYSTEM STANDBY</div><button class="btn secondary" id="restart" style="padding:10px 12px">Reset ↻</button></div></div></div></div></div></section>
+<section id="philosophy"><div class="clearance-gate" data-clearance="philosophy">
+  <div class="clearance-kicker">HOLOCRON VAULT // ACCESS 03</div>
+  <h3>Unlock the philosophy vault</h3>
+  <p>The archive contains personal principles, questions, and a few suspicious thoughts about the universe.</p>
+  <label class="clearance-check"><input type="checkbox" class="clearance-check-input"> <span>I will question assumptions—even the ones that agree with me.</span></label>
+  <button class="clearance-unlock" type="button" disabled>✓ Complete clearance task</button>
+</div>
+<div class="clearance-content"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / Operating principles</div><h2>My personal <span class="red">code.</span></h2></div><p>Not commandments. More like defaults I try to live by—subject to thoughtful refactoring.</p></div><div class="philosophy-grid"><article class="thought"><div class="num">PRINCIPLE_01</div><h3>Stay a beginner.</h3><p>The moment curiosity becomes ego, learning slows down. Ask better questions; don't pretend to have all the answers.</p></article><article class="thought"><div class="num">PRINCIPLE_02</div><h3>Ship, then sharpen.</h3><p>Perfection is a suspiciously convenient excuse to never publish. Make something useful, learn from reality, improve it.</p></article><article class="thought"><div class="num">PRINCIPLE_03</div><h3>Question the simulation.</h3><p>Explore technology, biology, philosophy, and existence. Different lenses reveal different parts of the same strange universe.</p></article></div></div></div></section>
+<section id="humor"><div class="clearance-gate" data-clearance="humor">
+  <div class="clearance-kicker">CANTINA TRANSMISSION // ACCESS 04</div>
+  <h3>Unlock the humor channel</h3>
+  <p>Proceed at your own risk. The jokes may be drier than Tatooine.</p>
+  <label class="clearance-check"><input type="checkbox" class="clearance-check-input"> <span>I understand that developer humor may contain bugs and questionable puns.</span></label>
+  <button class="clearance-unlock" type="button" disabled>✓ Complete clearance task</button>
+</div>
+<div class="clearance-content"><div class="wrap"><div class="section-head"><div><div class="kicker">06 / Sanity maintenance</div><h2>Humor.exe <span class="red">is running.</span></h2></div><p>Dark-ish developer humor, served without a stack trace. Reload the joke if the first one doesn't compile.</p></div><div class="humor"><div><div class="mono">DEBUGGING MY PERSONALITY</div><p style="font-size:22px;line-height:1.5;letter-spacing:-.04em">I enjoy deep philosophical questions, complex systems, and wondering whether the universe has documentation.</p><p style="color:#a99f9f;line-height:1.8">My sense of humor is a little sarcastic, my curiosity has no off switch, and my browser tabs are an archaeological site.</p></div><div class="humor-box"><div class="mono">RANDOM TRANSMISSION / <span class="red">#404</span></div><div class="joke" id="joke"><small>JOKE OF THE CYCLE</small>My code doesn't have bugs. It has unexpected lore.</div><button class="btn secondary" id="newJoke" style="align-self:flex-start">Generate another ↻</button></div></div></div></div></section>
+
+<section class="wrap dark-thoughts" id="dark-thoughts">
+  <div class="section-head">
+    <div><div class="kicker">06 / The Sith's notebook</div><h2>Thoughts from the <span class="red">dark side.</span></h2></div>
+    <p>Debugging, philosophy, ambition, and the strange universe between them.</p>
+  </div>
+  <div class="thought-console">
+    <div class="thought-console-top"><span class="mono">HOLOCRON // THOUGHT GENERATOR</span><span class="thought-live"><i></i> ONLINE</span></div>
+    <p class="thought-category" id="thoughtCategory">DEBUGGING PHILOSOPHY</p>
+    <blockquote id="thoughtText">A bug is not proof that you are a bad developer. It is evidence that your mental model and reality have stopped agreeing.</blockquote>
+    <div class="thought-actions"><button class="btn primary" id="generateThought" type="button">Generate another thought ↻</button><button class="btn secondary" id="copyThought" type="button">Copy thought</button></div>
+    <p class="thought-foot mono">NEW TRANSMISSION ON EVERY GENERATION · NO TWO CLICKS NEED TO MATCH</p>
+  </div>
+</section>
+
+<section id="contact"><div class="wrap contact"><div><div class="kicker">07 / Open channel</div><h2>Let's build<br><span class="red">something real.</span></h2><p>Have an interesting idea, a thoughtful conversation, or a bug that has become a family member? My inbox is open.</p><div class="actions"><a class="btn primary" href="mailto:md.owais111234@gmail.com">Transmit a message ↗</a><a class="btn secondary" href="https://github.com/md-owais9956" target="_blank" rel="noreferrer">GitHub ↗</a>  <a class="btn secondary" href="https://www.linkedin.com/in/mohd-owais-45a1a0324/" target="_blank" rel="noreferrer">LinkedIn ↗</a>   <a class="btn secondary" href="https://techwithowais.co.in" target="_blank" rel="noreferrer">TechWithOwais ↗</a></div></div><div class="mono" style="max-width:180px;line-height:2">STATUS: OPEN TO LEARNING<br>LOCATION: SOMEWHERE IN THE GALAXY<br>ALIGNMENT: UNDER REVIEW</div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> MOHD. OWAIS / BUILT WITH CURIOSITY</span><span>STAY CURIOUS. DON'T JOIN THE DARK SIDE OF TECH DEBT.</span><a href="#home">BACK TO TOP ↑</a></div></footer>
+<button class="top" id="top" aria-label="Back to top">↑</button><div class="toast" id="toast">THE FORCE IS STRONG WITH THIS ONE.</div>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
